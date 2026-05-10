@@ -81,14 +81,6 @@ A curated list of papers, benchmarks, and tools for evaluating image generation 
 
 ---
 
-## Related Awesome Lists
-
-- [Awesome-Text-to-Image](https://github.com/hkproj/awesome-text-to-image)
-- [Awesome-Diffusion-Models](https://github.com/diff-usion/Awesome-Diffusion-Models)
-- [Awesome-Image-Quality-Assessment](https://github.com/chaofengc/Awesome-Image-Quality-Assessment)
-
----
-
 ## Contributing
 
 Pull requests welcome! Please follow the existing format and ensure papers are from 2025–2026 with a focus on image generation evaluation.
