@@ -15,6 +15,7 @@
     --accent: #8b1a1a;
     --link: #6b1010;
     --hover: #f0ece4;
+    --code-bg: #f3f2ed;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -25,150 +26,74 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Header ── */
   header {
     border-bottom: 2px solid var(--accent);
     padding: 3rem 2rem 1.5rem;
     text-align: center;
     margin-bottom: 2rem;
   }
-  header h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    color: var(--accent);
-    margin-bottom: 0.3rem;
-  }
-  header p {
-    font-size: 0.95rem;
-    color: var(--muted);
-    font-style: italic;
-  }
+  header h1 { font-size: 2rem; font-weight: 600; letter-spacing: 0.03em; color: var(--accent); margin-bottom: 0.3rem; }
+  header p { font-size: 0.95rem; color: var(--muted); font-style: italic; }
 
-  /* ── Layout ── */
-  .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 
-  /* ── Sections ── */
   section { margin-bottom: 2.5rem; }
   h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--accent);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.35rem;
-    margin-bottom: 1rem;
-    letter-spacing: 0.02em;
-  }
-  h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 1rem 0 0.5rem;
+    font-size: 1.25rem; font-weight: 600; color: var(--accent);
+    border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; margin-bottom: 1rem; letter-spacing: 0.02em;
   }
 
-  /* ── Tables ── */
-  .table-wrap {
-    overflow-x: auto;
-    margin-bottom: 1.5rem;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
+  .table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-height: 1.5; }
   thead { border-bottom: 2px solid var(--fg); }
   tbody tr { border-bottom: 1px solid var(--border); }
   tbody tr:hover { background: var(--hover); }
   th {
-    text-align: left;
-    padding: 0.5rem 0.6rem;
-    font-weight: 600;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--muted);
+    text-align: left; padding: 0.5rem 0.5rem; font-weight: 600; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
   }
-  td { padding: 0.45rem 0.6rem; vertical-align: top; }
+  td { padding: 0.45rem 0.5rem; vertical-align: top; }
   td:first-child { font-weight: 500; }
 
-  /* ── Links ── */
-  a {
-    color: var(--link);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--muted);
-  }
+  a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--muted); }
   a:hover { color: var(--accent); border-bottom-style: solid; }
 
-  /* ── Badge ── */
   .badge {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--fg);
-    color: var(--bg);
-    padding: 0.1rem 0.45rem;
-    border-radius: 3px;
-    letter-spacing: 0.03em;
-    vertical-align: middle;
-    margin-left: 0.25rem;
+    display: inline-block; font-size: 0.7rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--fg); color: var(--bg); padding: 0.1rem 0.4rem; border-radius: 3px;
+    letter-spacing: 0.03em; vertical-align: middle; margin-left: 0.2rem;
   }
   .badge.venue { background: var(--accent); }
+  .badge.code { background: #2a6b2a; }
 
-  /* ── Code / Pre ── */
-  code {
-    font-family: "SF Mono", "Fira Code", "Menlo", monospace;
-    font-size: 0.82rem;
-    background: #f3f2ed;
-    padding: 0.1rem 0.3rem;
-    border-radius: 2px;
-  }
+  code { font-family: "SF Mono", "Fira Code", "Menlo", monospace; font-size: 0.8rem; background: var(--code-bg); padding: 0.1rem 0.3rem; border-radius: 2px; }
 
-  /* ── Trends list ── */
   .trends { list-style: none; }
   .trends li {
-    counter-increment: trend;
-    padding: 0.6rem 0 0.6rem 2.2rem;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-    line-height: 1.5;
+    counter-increment: trend; padding: 0.6rem 0 0.6rem 2.2rem; position: relative;
+    border-bottom: 1px solid var(--border); line-height: 1.5;
   }
   .trends li::before {
-    content: counter(trend);
-    position: absolute;
-    left: 0;
-    top: 0.6rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: var(--accent);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-    line-height: 1.5rem;
-    border-radius: 50%;
+    content: counter(trend); position: absolute; left: 0; top: 0.6rem;
+    width: 1.5rem; height: 1.5rem; background: var(--accent); color: white;
+    font-size: 0.75rem; font-weight: 600; text-align: center; line-height: 1.5rem; border-radius: 50%;
   }
 
-  /* ── Recommendation cards ── */
   .card-list { display: grid; gap: 0.8rem; }
   .card {
-    border: 1px solid var(--border);
-    padding: 0.9rem 1.1rem;
-    border-radius: 4px;
-    background: white;
-    transition: box-shadow 0.15s;
+    border: 1px solid var(--border); padding: 0.9rem 1.1rem; border-radius: 4px;
+    background: white; transition: box-shadow 0.15s;
   }
   .card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
   .card .title { font-weight: 600; }
-  .card .venue { font-size: 0.82rem; color: var(--muted); }
   .card .desc { font-size: 0.9rem; margin-top: 0.25rem; color: #333; }
 
-  /* ── Footer ── */
+  .check { color: #2a6b2a; font-weight: 600; }
+  .cross { color: #999; }
+
   footer {
-    text-align: center;
-    padding: 2rem 0 1rem;
-    color: var(--muted);
-    font-size: 0.82rem;
-    border-top: 1px solid var(--border);
+    text-align: center; padding: 2rem 0 1rem; color: var(--muted);
+    font-size: 0.82rem; border-top: 1px solid var(--border);
   }
 </style>
 </head>
@@ -186,49 +111,56 @@
     <h2>Core Benchmarks</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Benchmark</th><th>Venue</th><th>Scale</th><th>Key Insight</th></tr></thead>
+        <thead><tr><th>Benchmark</th><th>Venue</th><th>Scale</th><th>Key Insight</th><th>Code</th></tr></thead>
         <tbody>
-          <tr>
-            <td><a href="https://eprints.soton.ac.uk/510352/">ImagenWorld</a></td>
-            <td><span class="badge venue">ICLR 2026</span></td>
-            <td>3.6K conditions, 20K human annotations</td>
-            <td>6 tasks × 6 domains; VLM auto-eval Kendall <span class="katex">\tau</span> = 0.79</td>
-          </tr>
           <tr>
             <td><a href="https://t2i-corebench.github.io/">T2I-CoReBench</a></td>
             <td><span class="badge venue">ICLR 2026</span></td>
-            <td>1,080 prompts, 13.5K checklist items</td>
-            <td>12-dim taxonomy (6 composition + 6 reasoning); supersedes GenEval / T2I-CompBench</td>
+            <td>1,080 prompts, 13.5K items</td>
+            <td>12-dim taxonomy (composition + reasoning); supersedes GenEval</td>
+            <td><a href="https://github.com/KwaiVGI/T2I-CoReBench"><span class="badge code">GitHub</span></a></td>
           </tr>
           <tr>
-            <td><a href="https://github.com/lparolari/cobench">CoBench</a></td>
+            <td><a href="https://tiger-ai-lab.github.io/ImagenWorld/">ImagenWorld</a></td>
+            <td><span class="badge venue">ICLR 2026</span></td>
+            <td>3.6K conditions, 20K annotations</td>
+            <td>6 tasks × 6 domains; VLM auto-eval Kendall <span class="katex">\tau</span> = 0.79</td>
+            <td><a href="https://github.com/TIGER-AI-Lab/ImagenWorld"><span class="badge code">GitHub</span></a></td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2604.25358">CoBench</a></td>
             <td><span class="badge venue">CVPR 2026</span></td>
             <td>319K generated images</td>
             <td>Unified semantic-spatial evaluation for layout-guided diffusion</td>
+            <td><a href="https://github.com/lparolari/cobench"><span class="badge code">GitHub</span></a></td>
           </tr>
           <tr>
-            <td><a href="https://browse-export.arxiv.org/abs/2601.17027">SciGenBench</a></td>
+            <td><a href="https://arxiv.org/abs/2601.22155">UEval</a></td>
+            <td><span class="badge">2026.01</span></td>
+            <td>1,000 expert questions, 10.4K rubrics</td>
+            <td>8 real-world scenarios; GPT-5-Thinking only 66.4/100</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2601.17027">SciGenBench</a></td>
             <td><span class="badge">arXiv 2026.01</span></td>
             <td>—</td>
-            <td>Scientific correctness evaluated on information utility &amp; logical validity</td>
+            <td>Scientific correctness via information utility &amp; logical validity</td>
+            <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://arxiv.org/abs/2503.21721">cFreD</a></td>
-            <td><span class="badge venue">WACV 2026</span></td>
-            <td>4 benchmarks (HPDv2, GenAI-Bench, PartiPrompts, COCO)</td>
-            <td>Unifies quality + alignment; highest human correlation</td>
-          </tr>
-          <tr>
-            <td><a href="https://openreview.net/forum?id=mJtkQdH2V8">T2I-CompBench++</a></td>
-            <td><span class="badge venue">TPAMI 2025</span></td>
-            <td>8,000 prompts, 8 sub-categories</td>
-            <td>Adds 3D-spatial &amp; numeracy dimensions</td>
-          </tr>
-          <tr>
-            <td><a href="https://iclr.cc/virtual/2025/poster/27964">ScImage</a></td>
+            <td><a href="https://arxiv.org/abs/2412.02368">ScImage</a></td>
             <td><span class="badge venue">ICLR 2025</span></td>
             <td>7 models, 11 scientist evaluators</td>
             <td>All models struggle on complex scientific prompts</td>
+            <td><a href="https://github.com/leixin-zhang/Scimage"><span class="badge code">GitHub</span></a></td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2307.06350">T2I-CompBench++</a></td>
+            <td><span class="badge venue">TPAMI 2025</span></td>
+            <td>8,000 prompts, 8 sub-categories</td>
+            <td>Adds 3D-spatial &amp; numeracy dimensions</td>
+            <td><a href="https://github.com/Karine-Huang/T2I-CompBench"><span class="badge code">GitHub</span></a></td>
           </tr>
         </tbody>
       </table>
@@ -240,42 +172,49 @@
     <h2>Metrics &amp; Evaluation Frameworks</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Paper</th><th>Venue</th><th>Contribution</th></tr></thead>
+        <thead><tr><th>Paper</th><th>Venue</th><th>Contribution</th><th>Code</th></tr></thead>
         <tbody>
           <tr>
             <td><a href="https://arxiv.org/abs/2503.21721">cFreD</a></td>
-            <td>WACV 2026</td>
-            <td>Conditional Fréchet Distance — unified quality+alignment score</td>
+            <td><span class="badge venue">WACV 2026</span></td>
+            <td>Conditional Fréchet Distance — unified quality + alignment score</td>
+            <td><a href="https://github.com/JaywonKoo17/cFreD"><span class="badge code">GitHub</span></a></td>
           </tr>
           <tr>
             <td><a href="https://iccv.thecvf.com/virtual/2025/poster/823">Beyond Text-Image Alignment</a></td>
-            <td>ICCV 2025</td>
-            <td>ICT Score + HP Score; 10%+ accuracy improvement</td>
+            <td><span class="badge venue">ICCV 2025</span></td>
+            <td>ICT Score + HP Score; reward models penalize high-aesthetic images</td>
+            <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://www.gzis.ac.cn/index.php/Article-index-mid-1-id-1052.html">Guidance Matters (GA-Eval)</a></td>
-            <td>ICLR 2026</td>
+            <td><a href="https://arxiv.org/abs/2602.22570">Guidance Matters (GA-Eval)</a></td>
+            <td><span class="badge venue">ICLR 2026</span></td>
             <td>Reveals CFG bias; guidance-aware fair comparison framework</td>
+            <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://browse-export.arxiv.org/abs/2603.10990">Color Fidelity Benchmark</a></td>
-            <td>arXiv 2026.03</td>
-            <td>1.3M+ CFD dataset; human raters systematically favor vivid images</td>
+            <td><a href="https://arxiv.org/abs/2603.10990">Color Fidelity Benchmark</a></td>
+            <td><span class="badge">arXiv 2026.03</span></td>
+            <td>1.3M+ CFD dataset + CFM metric; vivid-color bias quantified</td>
+            <td><a href="https://github.com/ZhengyaoFang/CFM"><span class="badge code">GitHub</span></a></td>
           </tr>
           <tr>
-            <td><a href="https://browse-export.arxiv.org/abs/2603.14186">MMHM</a></td>
-            <td>arXiv 2026.03</td>
-            <td>MinMax Harmonic Mean: FID+IS+CLIP Score+Pick Score composite</td>
+            <td><a href="https://arxiv.org/abs/2603.14186">MMHM</a></td>
+            <td><span class="badge">arXiv 2026.03</span></td>
+            <td>MinMax Harmonic Mean: FID + IS + CLIP Score + Pick Score composite</td>
+            <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://browse-export.arxiv.org/abs/2505.04650">Multimodal Benchmarking</a></td>
-            <td>arXiv 2025.05</td>
-            <td>Weighted Score, CLIP, LPIPS, FID suite on DeepFashion-MM</td>
+            <td><a href="https://arxiv.org/abs/2505.04650">Multimodal Benchmarking</a></td>
+            <td><span class="badge">arXiv 2025.05</span></td>
+            <td>Weighted Score + CLIP + LPIPS + FID suite on DeepFashion-MM</td>
+            <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://labtutoronline.com/abs/2509.07127">SVGauge</a></td>
-            <td>ICIAP 2025</td>
-            <td>SigLIP+BLIP-2+SBERT vector-specific metric; FID fails on SVG</td>
+            <td><a href="https://arxiv.org/abs/2509.07127">SVGauge</a></td>
+            <td><span class="badge">ICIAP 2025</span></td>
+            <td>SigLIP + BLIP-2 + SBERT metric; FID/LPIPS/CLIPScore fail on SVG</td>
+            <td>—</td>
           </tr>
         </tbody>
       </table>
@@ -291,33 +230,77 @@
         <tbody>
           <tr>
             <td><a href="https://nips.cc/virtual/2025/loc/san-diego/poster/121393">MJ-Bench</a></td>
-            <td>NeurIPS 2025</td>
+            <td><span class="badge venue">NeurIPS 2025</span></td>
             <td>6-perspective multimodal judge benchmark; GPT-4o best overall</td>
-            <td><a href="https://github.com/aimi-lab/MJ-Bench">GitHub</a></td>
+            <td><a href="https://github.com/aimi-lab/MJ-Bench"><span class="badge code">GitHub</span></a></td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2505.14460">VisualQuality-R1</a></td>
+            <td><span class="badge venue">NeurIPS 2025</span></td>
+            <td>RL2R + GRPO + Thurstone ranking; SOTA on 8 IQA datasets</td>
+            <td><a href="https://github.com/TianheWu/VisualQuality-R1"><span class="badge code">GitHub</span></a></td>
           </tr>
           <tr>
             <td><a href="https://arxiv.org/abs/2509.25787">EvoQuality</a></td>
-            <td>ICLR 2026</td>
+            <td><span class="badge venue">ICLR 2026</span></td>
             <td>Self-supervised VLM IQA; +31.8% zero-shot PLCC</td>
             <td>—</td>
           </tr>
           <tr>
-            <td>VisualQuality-R1</td>
-            <td>NeurIPS 2025</td>
-            <td>RL2R+GRPO+Thurstone ranking; SOTA on 8 IQA datasets</td>
+            <td><a href="https://research.adobe.com/publication/vision-language-models-learn-to-assess-images-with-specialists/">VLM-as-Judge + Specialist</a></td>
+            <td><span class="badge venue">WACV 2026</span></td>
+            <td>ICL + CoT fine-tuning improves VLM judging alignment by 13% (Adobe)</td>
             <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://adoberesearch.ctlprojects.com/publication/vision-language-models-learn-to-assess-images-with-specialists/">VLM-as-Judge + Specialist</a></td>
-            <td>WACV 2026</td>
-            <td>ICL+CoT fine-tuning improves VLM judging alignment by 13%</td>
+            <td><a href="https://arxiv.org/abs/2603.07119">TIQA / ANTIQA</a></td>
+            <td><span class="badge">2026.03</span></td>
+            <td>Text rendering quality in generated images; +14% human-rated improvement</td>
+            <td><a href="https://github.com/koltsov-cmc/antiqa"><span class="badge code">GitHub</span></a></td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2512.03992">DIQ-H</a></td>
+            <td><span class="badge">arXiv 2025.12</span></td>
+            <td>Degraded Image Quality → Hallucination; VIR improves VLM 72 → 83%</td>
             <td>—</td>
           </tr>
           <tr>
-            <td><a href="https://www.semanticscholar.org/paper/TIQA%3A-Human-Aligned-Text-Quality-Assessment-in-Koltsov-Gushchin/6dcf427585b72edc320239987a2c34ec79b98b2f">TIQA</a></td>
-            <td>2026</td>
-            <td>Text quality in generated images; +14% human-rated improvement</td>
+            <td><a href="https://arxiv.org/abs/2603.06148">VLM-RobustBench</a></td>
+            <td><span class="badge">arXiv 2026.03</span></td>
+            <td>49 augmentations × 133 corrupted settings; VLMs spatially fragile</td>
             <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Domain-Specific -->
+  <section>
+    <h2>Domain-Specific Evaluation</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Paper</th><th>Domain</th><th>Key Finding</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a href="https://itiis.org/digital-library/105647">Artistic Image Review (KSII)</a></td>
+            <td>Artistic Image</td>
+            <td>Hybrid framework coupling automated metrics with domain-expert assessment</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.mdpi.com/2076-3417/15/5/2274">Text-in-Image Benchmark</a></td>
+            <td>Text Rendering</td>
+            <td>Applied Sciences (MDPI); models struggle with structural precision &amp; domain accuracy</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2509.07127">SVGauge</a></td>
+            <td>SVG Generation</td>
+            <td>FID / LPIPS / CLIPScore fail on vector graphics</td>
+          </tr>
+          <tr>
+            <td><a href="https://research-repository.uwa.edu.au/en/publications/on-the-fairness-diversity-and-reliability-of-text-to-image-genera/">Fairness, Diversity &amp; Reliability</a></td>
+            <td>Social Impact</td>
+            <td>Embedding-space perturbation framework; AI Review 2026</td>
           </tr>
         </tbody>
       </table>
@@ -331,11 +314,44 @@
       <li><strong>Single metric → Multi-dimensional suites.</strong> FID/CLIPScore era is ending; rubric-based evaluation (12-dim CoReBench, 6-dim ImagenWorld) is the new standard.</li>
       <li><strong>VLM-as-Judge goes mainstream.</strong> Capped at ~0.79 Kendall <span class="katex">\tau</span>; cannot fully replace fine-grained human evaluation.</li>
       <li><strong>CFG / Preference Bias discovered.</strong> Two ICLR 2026 papers independently revealed systematic bias toward large CFG scales and oversaturated colors.</li>
-      <li><strong>Reasoning is the new bottleneck.</strong> Models are adequate at composition but fail on deductive, inductive, and abductive reasoning.</li>
-      <li><strong>Domain-specialized evaluation emerges.</strong> Scientific images, text rendering, color fidelity, SVG, and fashion all have dedicated benchmarks.</li>
-      <li><strong>Text-in-Image remains the Achilles' heel.</strong> Industry-wide average of 64.6% text legibility across all models.</li>
+      <li><strong>Reasoning is the new bottleneck.</strong> Models adequate at composition but fail on deductive, inductive, and abductive reasoning.</li>
+      <li><strong>Domain-specialized evaluation emerges.</strong> Scientific images, text rendering, color fidelity, SVG, and fashion now have dedicated benchmarks.</li>
+      <li><strong>Text-in-Image remains the Achilles' heel.</strong> Industry-wide average of ~65% text legibility.</li>
       <li><strong>Self-supervised evaluation rises.</strong> EvoQuality achieves SOTA without any labels.</li>
     </ol>
+  </section>
+
+  <!-- Code Availability -->
+  <section>
+    <h2>Code Availability</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Paper</th><th>Repository</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>T2I-CoReBench</td><td><a href="https://github.com/KwaiVGI/T2I-CoReBench">KwaiVGI/T2I-CoReBench</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>ImagenWorld</td><td><a href="https://github.com/TIGER-AI-Lab/ImagenWorld">TIGER-AI-Lab/ImagenWorld</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>CoBench</td><td><a href="https://github.com/lparolari/cobench">lparolari/cobench</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>ScImage</td><td><a href="https://github.com/leixin-zhang/Scimage">leixin-zhang/Scimage</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>T2I-CompBench++</td><td><a href="https://github.com/Karine-Huang/T2I-CompBench">Karine-Huang/T2I-CompBench</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>cFreD</td><td><a href="https://github.com/JaywonKoo17/cFreD">JaywonKoo17/cFreD</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Color Fidelity (CFM)</td><td><a href="https://github.com/ZhengyaoFang/CFM">ZhengyaoFang/CFM</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>MJ-Bench</td><td><a href="https://github.com/aimi-lab/MJ-Bench">aimi-lab/MJ-Bench</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>VisualQuality-R1</td><td><a href="https://github.com/TianheWu/VisualQuality-R1">TianheWu/VisualQuality-R1</a></td><td><span class="check">✓</span></td></tr>
+          <tr><td>TIQA / ANTIQA</td><td><a href="https://github.com/koltsov-cmc/antiqa">koltsov-cmc/antiqa</a></td><td><span class="check">✓</span></td></tr>
+          <tr class="no-code"><td>UEval</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>SciGenBench</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>Beyond Text-Image Alignment</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>Guidance Matters (GA-Eval)</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>MMHM</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>Multimodal Benchmarking</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>SVGauge</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>EvoQuality</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>VLM-as-Judge + Specialist</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>DIQ-H</td><td>—</td><td><span class="cross">✗</span></td></tr>
+          <tr class="no-code"><td>VLM-RobustBench</td><td>—</td><td><span class="cross">✗</span></td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- Top picks -->
@@ -347,11 +363,11 @@
         <div class="desc">New-generation benchmark defining a 12-dimension evaluation taxonomy — composition + reasoning.</div>
       </div>
       <div class="card">
-        <div class="title"><a href="https://eprints.soton.ac.uk/510352/">ImagenWorld</a> <span class="badge venue">ICLR 2026</span></div>
+        <div class="title"><a href="https://tiger-ai-lab.github.io/ImagenWorld/">ImagenWorld</a> <span class="badge venue">ICLR 2026</span></div>
         <div class="desc">Largest-scale explainable human evaluation; upper-bound analysis of VLM auto-evaluation.</div>
       </div>
       <div class="card">
-        <div class="title"><a href="https://www.gzis.ac.cn/index.php/Article-index-mid-1-id-1052.html">Guidance Matters (GA-Eval)</a> <span class="badge venue">ICLR 2026</span></div>
+        <div class="title"><a href="https://arxiv.org/abs/2602.22570">Guidance Matters (GA-Eval)</a> <span class="badge venue">ICLR 2026</span></div>
         <div class="desc">Exposes fundamental flaws in current evaluation paradigms — CFG bias and over-saturation.</div>
       </div>
       <div class="card">
@@ -364,7 +380,6 @@
       </div>
     </div>
   </section>
-
 
 </div>
 
